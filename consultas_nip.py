@@ -5,7 +5,7 @@ from time import sleep
 from sys import exit
 
 while True:
-    resposta = menu(['OLT', 'CTO', 'BAIRRO', 'CONDOMÍNIO', 'CLIENTE','SAIR'])
+    resposta = menu(['OLT','CTO','BAIRRO','CONDOMÍNIO','CLIENTE','SAIR'])
     if resposta == 1:
         print(linha())
         consulta_por_equipamento()
