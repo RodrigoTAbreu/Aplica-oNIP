@@ -10,3 +10,4 @@ Como tratava-se de uma urgência para que os analistas em questão pudessem real
 ## Sobre a Base de Dados.
 A empresa utlizava controles em paralelos, para ativação de clientes na rede e para consulta de clientes em um determinado POP de atendimento. Essa base, gerada em .XLS foi captada e identificada que ambas haviam campos em comum, possiblilitando então o cruzamento de informações.
 
+[![APP-NIP](https://img.shields.io/apm/l/aap-nip)](https://github.com/RodrigoTAbreu/App-NIP/blob/main/LICENSE)
