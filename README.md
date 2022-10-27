@@ -26,8 +26,24 @@ Por fim foi disponibilizado um manual intitulado Leia Antes.pdf para que os anal
 
 ![Sele%C3%A7%C3%A3o_167.png](https://github.com/RodrigoTAbreu/App-NIP/blob/main/assest/Sele%C3%A7%C3%A3o_167.png)
 <br>
+
+
+## -- Tecnologias Utilizadas --
+- Python 3
+- SQLite
+
+## -- Como Executar a Aplicação -- 
+``` bash
+# Salve os arquivos consultas_nip.exe e olt_bco.db na mesma pasta. Em seguida execute o arquivo.
+./consultas_nip
+
+```
+
 ## -- Considerações Finais -- 
 A aplicação teve como objetivo atender uma demanda em carater de urgência, e não desenvolver algo mais sofitsticado, apenas de possibilitar inúmeras outras demandas.
 
+## -- Autor -- 
+Rodrigo Telles de Abreu.<br>
+https://www.linkedin.com/in/rodrigo-telles/
 
 
