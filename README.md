@@ -44,6 +44,7 @@ A aplicação teve como objetivo atender uma demanda em carater de urgência, e 
 
 ## -- Autor -- 
 Rodrigo Telles de Abreu.<br>
+rodrigo.telles.abreu@gmail.com<br>
 https://www.linkedin.com/in/rodrigo-telles/
 
 
