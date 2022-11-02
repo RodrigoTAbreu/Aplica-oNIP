@@ -3,8 +3,14 @@ class TelaPython:
     def __init__(self):
         #Design da Tela
         sg.change_look_and_feel('DarkTeal6')
+        
         #Janela de POPup
-        sg.popup('Bem Vindo. Clique em OK para continuar.')
+        #sg.popup('Bem Vindo. Clique em OK para continuar.')
+        sg.popup_scrolled('Exemplo de Texto com POPup em Python.',size=(80,None))
+        #Carregamento POPup
+        #for i in range(1,10000):
+        #    sg.one_line_progress_meter('My Meter', i+1, 10000, 'key',#'Optional message')
+        
         #layout
         layout = [
             [sg.Text('Nome:', size=(5,0)),sg.Input(size=(15,0),key='nome')],
