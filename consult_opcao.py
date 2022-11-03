@@ -17,7 +17,7 @@ def consulta_por_equipamento():
 
     print('Resultado: ')
     print('--'*40)
-    cursor.execute(f" SELECT olt, pon, cto, nome FROM geral WHERE olt = '{opc}' AND pon = 'GPON {gpon}'")
+    cursor.execute(f"SELECT olt, pon, cto, nome FROM geral WHERE olt = '{opc}' AND pon = 'GPON {gpon}'")
     for row in cursor:
         print(f'{row}'.replace(',','|').replace('(','').replace(')','').replace("'",""))
     print(cursor.fetchall())
