@@ -1,15 +1,15 @@
 import PySimpleGUI as sg 
 
 sg.theme('SystemDefault')
-
+"""
 window = sg.Window(
     
     'CONSULTAS - NIP',
     size=(400,250),
     #element_justification = 'l', -->> Faz alinhamento dos itens de uma vez 'c' center, 'l' left, 'r' right
     
-)
-
+)"""
+#Layout da coluna da Esquerda
 layout_esquerda = [ 
     #[sg.Text("CONSULTAS NIP",key='titulo_tela', size=30)],
     [sg.Button('OLT',key='consulta_olt', size=15)], 
@@ -30,9 +30,10 @@ layout = [
     [sg.Column(layout_esquerda), sg.VSeparator(), sg.Column(layout_direita)]
 ]
 
+#Carrega Janela
 window = sg.Window(
-    'App NIP',
-    layout = layout,
+    'App NIP', #titulo da janela
+    layout = layout, 
 )
 
 window.read()
