@@ -27,12 +27,17 @@ layout_direita = [
 
 #Layout que une as colunas
 layout = [
+    [sg.Push()],
+    [sg.Push()],
+    [sg.Push()],
+    [sg.Push()],
     [sg.Column(layout_esquerda), sg.VSeparator(), sg.Column(layout_direita)]
 ]
 
 #Carrega Janela
 window = sg.Window(
     'App NIP', #titulo da janela
+    size=(500,300),
     layout = layout, 
 )
 
