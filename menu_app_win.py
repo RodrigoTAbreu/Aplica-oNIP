@@ -1,4 +1,5 @@
 import PySimpleGUI as sg 
+#import bairro
 
 sg.theme('SystemDefault')
 """
@@ -54,6 +55,7 @@ while True: #necessário para deixar a tela "rodando" o tempo todo.
         window['-result-'].update(' ')
     if event == '-bairro-':
         window['-titres-'].update('CONSULTA POR BAIRRO')
+        #bairro()
         window['-result-'].update('RESULTADO 3')
     if event == '-cliente-':
         window['-titres-'].update('CONSULTA POR CLIENTE') 

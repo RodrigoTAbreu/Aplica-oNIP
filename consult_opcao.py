@@ -1,6 +1,6 @@
 from time import sleep
 import consultas_nip
-from menu import *
+from equipamentos import *
 from sys import exit
 #CONSULTA DO BANCO DE DADOS POR EQUIPAMENTOS E PON
 
