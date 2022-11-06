@@ -22,18 +22,27 @@ layout_esquerda = [
               
 ]
 #Layout da coluna da Direita
-layout_direita = [
+layout_direita_t = [
     [sg.Text('Consulta de Dados - NIP',key='-titres-')],
-    [sg.Text(' ',key='-result-')]
+    [sg.Text(' ',key='-result-')],
+    [sg.Menu([['Equipamentos-OLT', ['OLT_HELBOR-01','OLT_HELBOR-02','OLT_HELBOR-03']],['CTOs', ['Consulta - CTO', ]]])]
 ]
 
+layout_direita_c = [
+    [sg.Radio('OLT_HELBOR-01','OLT', default=False)],
+    [sg.Radio('OLT_HELBOR-02','OLT')],
+    [sg.Radio('OLT_HELBOR-03','OLT')],
+    [sg.Radio('OLT_HELBOR-04','OLT')],
+
+]
 #Layout que une as colunas
 layout = [
     [sg.Push()],#aplica um espaço
     [sg.Push()],
     [sg.Push()],
     [sg.Push()],
-    [sg.Column(layout_esquerda), sg.VSeparator(), sg.Column(layout_direita)]
+    [sg.Column(layout_esquerda), sg.VSeparator(), sg.Column(layout_direita_t)],
+    
 ]
 
 #Carrega Janela
@@ -49,10 +58,10 @@ while True: #necessário para deixar a tela "rodando" o tempo todo.
         break
     if event == '-olt-':
         window['-titres-'].update('CONSULTA POR OLT')
-        window['-result-'].update('RESULTADO 1')
+        window['-titres-'].update(sg.Multiline(s=(45,5)))
+
     if event == '-cto-':
         window['-titres-'].update('CONSULTA POR CTO')
-        window['-result-'].update(' ')
     if event == '-bairro-':
         window['-titres-'].update('CONSULTA POR BAIRRO')
         #bairro()
