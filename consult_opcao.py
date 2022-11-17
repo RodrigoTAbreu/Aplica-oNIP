@@ -15,16 +15,28 @@ def consulta_por_equipamento():
     opc = lista_do_equipamento()
     gpon = input("Informe a GPON: ")
 
+    cont = 0
     print('Resultado: ')
     print('--'*40)
     cursor.execute(f"SELECT olt, pon, cto, nome FROM geral WHERE olt = '{opc}' AND pon = 'GPON {gpon}'")
     for row in cursor:
+        cont += 1
         print(f'{row}'.replace(',','|').replace('(','').replace(')','').replace("'",""))
-    print(cursor.fetchall())
-    
+
+    if cont == 0:
+        print('GPON NÃO LOCALIZADA PARA ESTA OLT >>')
+        print('Iniciando Consulta por GPON')
+        sleep(5)
+        print('--'*20)
+        cursor.execute(f"SELECT gpon, cto, codcliente, cliente FROM dados_cliente WHERE gpon = 'GPON {gpon}'")
+        for row in cursor:
+            print(f'{row}'.replace(',', '|').replace('(', '').replace(')', '').replace("'", ""))
+        print(cursor.fetchall())
+
     
 
 #CONSULTA DO BANCO DE DADOS POR CTO
+
 
 def consulta_cto():
     import sqlite3 #importa a lib do sql
@@ -43,15 +55,27 @@ def consulta_cto():
     #    print(row)
 
     #Realiza a pesquisa vinculando a consulta com duas tabelas distintas, com base na CTO que é campo em comum nas duas tabelas
+
+    cont = 0
     cursor.execute(f"SELECT olt, pon, dados_cliente.CODCLIENTE, dados_cliente.CLIENTE FROM geral INNER JOIN dados_cliente on geral.cto = dados_cliente.cto WHERE geral.cto = '{cto}'")
     for row in cursor:
-        print(f'{row}'.replace(',','|').replace('(','').replace(')','').replace("'",""))
+        cont += 1
+        print(f'{cont: <2} - {row}'.replace(',','|').replace('(',' ').replace(')',' ').replace("'",""))
+
     print(cursor.fetchall())
 
     cursor.execute(f"SELECT olt, pon, cto, NOME, CONDOMINIO, ENDEREÇO, bairro FROM geral WHERE CTO='{cto}'")
     for row in cursor:
-        print(f'{row}'.replace(',','|').replace('(','').replace(')','').replace("'",""))
+        cont += 1
+        print(f'{cont: <2} - {row}'.replace(',','|').replace('(','').replace(')','').replace("'",""))
+
     print(cursor.fetchall())
+
+    if cont == 0:
+        cursor.execute(f"SELECT gpon, cto, codcliente,  cliente FROM dados_cliente WHERE CTO='{cto}'")
+        for row in cursor:
+            print(f'Localizado Apenas->> CTO {row}'.replace(',', '|').replace('(', '').replace(')', '').replace("'", ""))
+        print(cursor.fetchall())
 
 #CONSULTA DO BANCO DE DADOS POR BAIRRO
 

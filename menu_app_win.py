@@ -58,17 +58,16 @@ while True: #necessário para deixar a tela "rodando" o tempo todo.
         break
     if event == '-olt-':
         window['-titres-'].update('CONSULTA POR OLT')
-        window['-titres-'].update(sg.Multiline(s=(45,5)))
+        window['-titres-'].update('Teste')
 
     if event == '-cto-':
         window['-titres-'].update('CONSULTA POR CTO')
     if event == '-bairro-':
         window['-titres-'].update('CONSULTA POR BAIRRO')
-        #bairro()
         window['-result-'].update('RESULTADO 3')
     if event == '-cliente-':
         window['-titres-'].update('CONSULTA POR CLIENTE') 
-        window['-result-'].update(' ')
+        window['-result-'].update('Consulta Por Cliente')
     if event == '-cond-':
         window['-titres-'].update('CONSULTA POR CONDOMÍNIO')
         window['-result-'].update('RESULTADO 5')
